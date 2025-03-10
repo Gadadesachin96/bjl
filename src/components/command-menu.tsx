@@ -32,7 +32,7 @@ export function CommandMenu() {
     },
     [setOpen]
   )
-
+  
   return (
     <CommandDialog modal open={open} onOpenChange={setOpen}>
       <CommandInput placeholder='Type a command or search...' />

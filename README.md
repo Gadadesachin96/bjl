@@ -1,10 +1,10 @@
-# Shadcn Admin Dashboard
+# BJE Admin Dashboard
 
-Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
+Admin Dashboard UI crafted with BJE and Vite. Built with responsiveness and accessibility in mind.
 
-![alt text](public/images/shadcn-admin.png)
+![alt text](public/images/BJE-admin.png)
 
-I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.
+I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from BJEUI examples.
 
 > This is not a starter project (template) though. I'll probably make one in the future.
 
@@ -20,11 +20,11 @@ I've been creating dashboard UIs at work and for my personal projects. I always 
 
 ## Tech Stack
 
-**UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
+**UI:** [BJEUI](https://ui.BJE.com) (TailwindCSS + RadixUI)
 
 **Build Tool:** [Vite](https://vitejs.dev/)
 
-**Routing:** [TanStack Router](https://tanstack.com/router/latest)
+<!-- **Routing:** [TanStack Router](https://tanstack.com/router/latest) -->
 
 **Type Checking:** [TypeScript](https://www.typescriptlang.org/)
 
@@ -36,14 +36,12 @@ I've been creating dashboard UIs at work and for my personal projects. I always 
 
 Clone the project
 
-```bash
-  git clone https://github.com/satnaing/shadcn-admin.git
-```
+
 
 Go to the project directory
 
 ```bash
-  cd shadcn-admin
+  cd BJE-admin
 ```
 
 Install dependencies
@@ -58,10 +56,4 @@ Start the server
   pnpm run dev
 ```
 
-## Author
 
-Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
-
-## License
-
-Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)

@@ -1,27 +1,34 @@
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import {
   Card,
-  CardContent,
-  CardDescription,
+  CardContent, // CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+// import { TopNav } from '@/components/layout/top-nav'
+// import { Overview } from './components/overview'
+// import { RecentSales } from './components/recent-sales'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Header } from '@/components/layout/header'
 import { Main } from '@/components/layout/main'
-import { TopNav } from '@/components/layout/top-nav'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
-import { Overview } from './components/overview'
-import { RecentSales } from './components/recent-sales'
 
 export default function Dashboard() {
   return (
     <>
       {/* ===== Top Heading ===== */}
       <Header>
-        <TopNav links={topNav} />
+        {/* <TopNav links={topNav} /> */}
         <div className='ml-auto flex items-center space-x-4'>
           <Search />
           <ThemeSwitch />
@@ -33,9 +40,9 @@ export default function Dashboard() {
       <Main>
         <div className='mb-2 flex items-center justify-between space-y-2'>
           <h1 className='text-2xl font-bold tracking-tight'>Dashboard</h1>
-          <div className='flex items-center space-x-2'>
+          {/* <div className='flex items-center space-x-2'>
             <Button>Download</Button>
-          </div>
+          </div> */}
         </div>
         <Tabs
           orientation='vertical'
@@ -160,16 +167,16 @@ export default function Dashboard() {
                 </CardContent>
               </Card>
             </div>
-            <div className='grid grid-cols-1 gap-4 lg:grid-cols-7'>
-              <Card className='col-span-1 lg:col-span-4'>
+            <div className='flex-grow'>
+              {/* <Card className='col-span-1 lg:col-span-4'>
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
                 </CardHeader>
                 <CardContent className='pl-2'>
                   <Overview />
                 </CardContent>
-              </Card>
-              <Card className='col-span-1 lg:col-span-3'>
+              </Card> */}
+              {/* <Card className='col-span-1 lg:col-span-3'>
                 <CardHeader>
                   <CardTitle>Recent Sales</CardTitle>
                   <CardDescription>
@@ -179,8 +186,37 @@ export default function Dashboard() {
                 <CardContent>
                   <RecentSales />
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
+
+            <Table className='overflow-hidden rounded-lg border border-gray-300 shadow-md'>
+              <TableHeader className='bg-gray-100'>
+                <TableRow>
+                  {tableHeaders.map((header, index) => (
+                    <TableHead
+                      key={index}
+                      className='px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider dark:bg-gray-900'
+                    >
+                      {header}
+                    </TableHead>
+                  ))}
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {orders.map((order, index) => (
+                  <TableRow
+                    key={index}
+                    className="bg-black-200 "
+                  >
+                    {Object.values(order).map((value, i) => (
+                      <TableCell key={i} className='px-4 py-3'>
+                        {value}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </TabsContent>
         </Tabs>
       </Main>
@@ -212,5 +248,99 @@ const topNav = [
     href: 'dashboard/settings',
     isActive: false,
     disabled: true,
+  },
+]
+
+const tableHeaders = [
+  'store',
+  'order no',
+  'customer',
+  'view order',
+  'discount',
+  'channel',
+  'total',
+  'date/time',
+]
+
+const orders = [
+  {
+    store: 'SuperMart',
+    orderNo: 'ORD12345',
+    customer: 'John Doe',
+    viewOrder: 'View',
+    discount: '10%',
+    channel: 'Online',
+    total: '$150.00',
+    dateTime: '2024-03-04 12:30 PM',
+  },
+  {
+    store: 'FreshFoods',
+    orderNo: 'ORD12346',
+    customer: 'Jane Smith',
+    viewOrder: 'View',
+    discount: '5%',
+    channel: 'In-Store',
+    total: '$75.50',
+    dateTime: '2024-03-04 01:15 PM',
+  },
+  {
+    store: 'GroceryPlus',
+    orderNo: 'ORD12347',
+    customer: 'Emily Johnson',
+    viewOrder: 'View',
+    discount: '15%',
+    channel: 'Online',
+    total: '$200.75',
+    dateTime: '2024-03-04 02:00 PM',
+  },
+  {
+    store: 'DailyNeeds',
+    orderNo: 'ORD12348',
+    customer: 'Michael Brown',
+    viewOrder: 'View',
+    discount: '8%',
+    channel: 'App',
+    total: '$95.25',
+    dateTime: '2024-03-04 03:45 PM',
+  },
+  {
+    store: 'MegaStore',
+    orderNo: 'ORD12349',
+    customer: 'Sarah Williams',
+    viewOrder: 'View',
+    discount: '12%',
+    channel: 'Online',
+    total: '$175.99',
+    dateTime: '2024-03-04 05:30 PM',
+  },
+  {
+    store: 'HomeEssentials',
+    orderNo: 'ORD12350',
+    customer: 'David Miller',
+    viewOrder: 'View',
+    discount: '20%',
+    channel: 'In-Store',
+    total: '$250.00',
+    dateTime: '2024-03-04 06:10 PM',
+  },
+  {
+    store: 'QuickMart',
+    orderNo: 'ORD12351',
+    customer: 'Sophia Lee',
+    viewOrder: 'View',
+    discount: '7%',
+    channel: 'Online',
+    total: '$80.99',
+    dateTime: '2024-03-04 07:20 PM',
+  },
+  {
+    store: 'DailyMart',
+    orderNo: 'ORD12352',
+    customer: 'James Anderson',
+    viewOrder: 'View',
+    discount: '10%',
+    channel: 'App',
+    total: '$120.50',
+    dateTime: '2024-03-04 08:05 PM',
   },
 ]

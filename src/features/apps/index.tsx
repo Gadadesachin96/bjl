@@ -1,18 +1,18 @@
 import { useState } from 'react'
-import {
-  IconAdjustmentsHorizontal,
-  IconSortAscendingLetters,
-  IconSortDescendingLetters,
-} from '@tabler/icons-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+// import {
+//   IconAdjustmentsHorizontal,
+//   IconSortAscendingLetters,
+//   IconSortDescendingLetters,
+// } from '@tabler/icons-react'
+// import { Button } from '@/components/ui/button'
+// import { Input } from '@/components/ui/input'
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
 import { Header } from '@/components/layout/header'
 import { Main } from '@/components/layout/main'
@@ -28,24 +28,24 @@ const appText = new Map<string, string>([
 ])
 
 export default function Apps() {
-  const [sort, setSort] = useState('ascending')
-  const [appType, setAppType] = useState('all')
-  const [searchTerm, setSearchTerm] = useState('')
+  // const [sort, setSort] = useState('ascending')
+  // const [appType, setAppType] = useState('all')
+  // const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredApps = apps
-    .sort((a, b) =>
-      sort === 'ascending'
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
-    )
-    .filter((app) =>
-      appType === 'connected'
-        ? app.connected
-        : appType === 'notConnected'
-          ? !app.connected
-          : true
-    )
-    .filter((app) => app.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  // const filteredApps = apps
+  //   .sort((a, b) =>
+  //     sort === 'ascending'
+  //       ? a.name.localeCompare(b.name)
+  //       : b.name.localeCompare(a.name)
+  //   )
+  //   .filter((app) =>
+  //     appType === 'connected'
+  //       ? app.connected
+  //       : appType === 'notConnected'
+  //         ? !app.connected
+  //         : true
+  //   )
+  //   .filter((app) => app.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
   return (
     <>
@@ -70,13 +70,13 @@ export default function Apps() {
         </div>
         <div className='my-4 flex items-end justify-between sm:my-0 sm:items-center'>
           <div className='flex flex-col gap-4 sm:my-4 sm:flex-row'>
-            <Input
+            {/* <Input
               placeholder='Filter apps...'
               className='h-9 w-40 lg:w-[250px]'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <Select value={appType} onValueChange={setAppType}>
+            /> */}
+            {/* <Select value={appType} onValueChange={setAppType}>
               <SelectTrigger className='w-36'>
                 <SelectValue>{appText.get(appType)}</SelectValue>
               </SelectTrigger>
@@ -85,10 +85,10 @@ export default function Apps() {
                 <SelectItem value='connected'>Connected</SelectItem>
                 <SelectItem value='notConnected'>Not Connected</SelectItem>
               </SelectContent>
-            </Select>
+            </Select> */}
           </div>
 
-          <Select value={sort} onValueChange={setSort}>
+          {/* <Select value={sort} onValueChange={setSort}>
             <SelectTrigger className='w-16'>
               <SelectValue>
                 <IconAdjustmentsHorizontal size={18} />
@@ -108,10 +108,10 @@ export default function Apps() {
                 </div>
               </SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
         </div>
         <Separator className='shadow' />
-        <ul className='faded-bottom no-scrollbar grid gap-4 overflow-auto pb-16 pt-4 md:grid-cols-2 lg:grid-cols-3'>
+        {/* <ul className='faded-bottom no-scrollbar grid gap-4 overflow-auto pb-16 pt-4 md:grid-cols-2 lg:grid-cols-3'>
           {filteredApps.map((app) => (
             <li
               key={app.name}
@@ -137,7 +137,7 @@ export default function Apps() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </Main>
     </>
   )

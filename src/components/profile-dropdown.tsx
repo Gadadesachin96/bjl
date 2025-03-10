@@ -15,20 +15,33 @@ import {
 export function ProfileDropdown() {
   return (
     <DropdownMenu modal={false}>
-      <DropdownMenuTrigger asChild>
+      {/* <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
-            <AvatarImage src='/avatars/01.png' alt='@shadcn' />
-            <AvatarFallback>SN</AvatarFallback>
+            <AvatarImage src='/avatars/01.png' alt='@BJE' />
+            <AvatarFallback>
+              <img
+                src='https://beefjerkyx.com/themes/custom/bjov2/images/2022/bje-logo-oval-small.png'
+                alt='Logo'
+                style={{ maxWidth: '100%', height: 'auto' }}
+                // className='w-10 h-auto'
+
+              />
+            </AvatarFallback>
           </Avatar>
         </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className='w-56' align='end' forceMount>
+      </DropdownMenuTrigger> */}
+      {/* <DropdownMenuContent className='w-56' align='end' forceMount>
         <DropdownMenuLabel className='font-normal'>
-          <div className='flex flex-col space-y-1'>
-            <p className='text-sm font-medium leading-none'>satnaing</p>
+          <div className='flex gap-5 justify-between space-y-1 items-center'>
+            <img
+              src='https://beefjerkyx.com/themes/custom/bjov2/images/2022/bje-logo-oval-small.png'
+              alt='Logo'
+              className='w-10 h-10'
+              style={{ maxWidth: '30%', height: 'auto' }}
+            />{' '}
             <p className='text-xs leading-none text-muted-foreground'>
-              satnaingdev@gmail.com
+              bje25222@gmail.com
             </p>
           </div>
         </DropdownMenuLabel>
@@ -59,7 +72,7 @@ export function ProfileDropdown() {
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
-      </DropdownMenuContent>
+      </DropdownMenuContent> */}
     </DropdownMenu>
   )
 }

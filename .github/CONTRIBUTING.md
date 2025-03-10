@@ -1,6 +1,6 @@
-# Contributing to Shadcn-Admin
+# Contributing to BJE-Admin
 
-Thank you for considering contributing to **shadcn-admin**! Every contribution is valuable, whether it's reporting bugs, suggesting improvements, adding features, or refining README.
+Thank you for considering contributing to **BJE-admin**! Every contribution is valuable, whether it's reporting bugs, suggesting improvements, adding features, or refining README.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ Thank you for considering contributing to **shadcn-admin**! Every contribution i
 2. **Clone** your fork:
 
    ```bash
-   git clone https://github.com/your-username/shadcn-admin.git
+   git clone https://github.com/your-username/BJE-admin.git
    ```
 
 3. **Install dependencies:**
@@ -96,6 +96,5 @@ pnpm lint && pnpm format && pnpm knip && pnpm build
 
 ---
 
-Thank you for helping make **shadcn-admin** better! 🚀
+Thank you for helping make **BJE-admin** better! 🚀
 
-If you have any questions, feel free to reach out via [Discussions](https://github.com/satnaing/shadcn-admin/discussions).

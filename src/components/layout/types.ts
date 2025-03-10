@@ -8,9 +8,14 @@ interface User {
 
 interface Team {
   name: string
-  logo: React.ElementType
-  plan: string
+  avatar: string
+  // logo: TeamLogo
+  // plan: string
 }
+// interface TeamLogo {
+//   src: string
+//   alt: string
+// }
 
 interface BaseNavItem {
   title: string
