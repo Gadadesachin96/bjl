@@ -130,41 +130,7 @@ export function DataTable<TData, TValue>({
   const [loading, setLoading] = React.useState(true)
   const [error, setError] = React.useState(null)
 
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // console.log('Making API request to:', 'https://36a4-49-36-91-136.ngrok-free.app/api/getProductData');
-  //       const response = await fetch('https://36a4-49-36-91-136.ngrok-free.app/api/getProductData', {
-  //               method:"POST",
-  //         headers: {
-  //           'Accept': 'application/json',
-  //           'ngrok-skip-browser-warning': 'true' 
-  //         }
-  //       });
-
-  //       console.log('Response status:', response.status);
-  //       console.log('Response headers:', response.headers);
-
-  //       if (!response.ok) {
-  //         throw new Error(`HTTP error! status: ${response.status}`);
-  //       }
-
-  //       const jsonData = await response.json();
-  //       console.log("Fetched API Data:", jsonData);
-  //       const transformedData = transformApiData(jsonData.products || []);
-  //       console.log("Transformed Data for Table:", transformedData);
-  //       setData(transformedData);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //       setError(error.message);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-  
+    
   React.useEffect(() => {
     const fetchData = async () => {
       try {
@@ -269,7 +235,7 @@ export function DataTable<TData, TValue>({
                   <TableCell key={colIndex} className='px-4 py-2 text-center'>
                     {header === 'shop' ? (
                       <div className='flex items-center gap-2'>
-                        <span className='truncate text-sm font-medium text-gray-700'>
+                        <span className='truncate text-sm font-medium '>
                           {header === 'shop' ? row.shop : row[header]}
                         </span>
                       </div>
@@ -547,6 +513,5 @@ export function DataTable<TData, TValue>({
     </div>
   )
 }
-
 
 

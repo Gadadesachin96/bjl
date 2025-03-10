@@ -13,11 +13,11 @@ import { sidebarData } from './data/sidebar-data'
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible='icon' variant='floating' {...props}>
-      <SidebarHeader>
+      <SidebarHeader style={{alignItems:"center"}}>
         <img
           src='https://beefjerkyx.com/themes/custom/bjov2/images/2022/bje-logo-oval-small.png'
           alt='Logo'
-          style={{ maxWidth: '50%', height: 'auto' }}
+          style={{ maxWidth: '80%', height: 'auto' }}
         />{' '}
       </SidebarHeader>
       <SidebarContent>
