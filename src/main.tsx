@@ -6,9 +6,7 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 //   QueryClient,
 //   QueryClientProvider,
 // } from '@tanstack/react-query'
-import { useAuthStore } from '@/stores/authStore'
 // import { handleServerError } from '@/utils/handle-server-error'
-import { toast } from '@/hooks/use-toast'
 import { FontProvider } from './context/font-context'
 import { ThemeProvider } from './context/theme-context'
 import { Provider } from 'react-redux'
@@ -16,6 +14,7 @@ import store from './store/store'
 import './index.css'
 // Generated Routes         
 import { routeTree } from './routeTree.gen'
+import { QueryClient } from '@tanstack/react-query'
 
 /*  // TanStack Query Client Setup (Commented Out)
 // const queryClient = new QueryClient({
@@ -78,7 +77,9 @@ import { routeTree } from './routeTree.gen'
 // Create a new router instance
 const router = createRouter({
   routeTree,
-    context: {}, // Removed queryClient from context
+    context: {
+      queryClient: new QueryClient
+    }, 
   defaultPreload: 'intent',
   defaultPreloadStaleTime: 0,
 })

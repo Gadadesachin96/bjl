@@ -15,7 +15,7 @@ import {
 export function ProfileDropdown() {
   return (
     <DropdownMenu modal={false}>
-      {/* <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
             <AvatarImage src='/avatars/01.png' alt='@BJE' />
@@ -30,8 +30,8 @@ export function ProfileDropdown() {
             </AvatarFallback>
           </Avatar>
         </Button>
-      </DropdownMenuTrigger> */}
-      {/* <DropdownMenuContent className='w-56' align='end' forceMount>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className='w-56' align='end' forceMount>
         <DropdownMenuLabel className='font-normal'>
           <div className='flex gap-5 justify-between space-y-1 items-center'>
             <img
@@ -72,7 +72,7 @@ export function ProfileDropdown() {
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
-      </DropdownMenuContent> */}
+      </DropdownMenuContent>
     </DropdownMenu>
   )
 }

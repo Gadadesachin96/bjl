@@ -1,4 +1,3 @@
-import { useState } from 'react'
 // import {
 //   IconAdjustmentsHorizontal,
 //   IconSortAscendingLetters,
@@ -19,13 +18,13 @@ import { Main } from '@/components/layout/main'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
-import { apps } from './data/apps'
+// import { apps } from './data/apps'
 
-const appText = new Map<string, string>([
-  ['all', 'All Apps'],
-  ['connected', 'Connected'],
-  ['notConnected', 'Not Connected'],
-])
+// const appText = new Map<string, string>([
+//   ['all', 'All Apps'],
+//   ['connected', 'Connected'],
+//   ['notConnected', 'Not Connected'],
+// ])
 
 export default function Apps() {
   // const [sort, setSort] = useState('ascending')
@@ -58,7 +57,6 @@ export default function Apps() {
         </div>
       </Header>
 
-      {/* ===== Content ===== */}
       <Main fixed>
         <div>
           <h1 className='text-2xl font-bold tracking-tight'>

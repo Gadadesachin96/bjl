@@ -18,18 +18,10 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import { Badge } from '../ui/badge'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '../ui/dropdown-menu'
 import { NavCollapsible, NavItem, NavLink, type NavGroup } from './types'
 
 export function NavGroup({ title, items }: NavGroup) {
-  const { state } = useSidebar()
+  useSidebar()
   const href = useLocation({ select: (location) => location.href })
   return (
     <SidebarGroup>
@@ -41,10 +33,10 @@ export function NavGroup({ title, items }: NavGroup) {
           if (!item.items)
             return <SidebarMenuLink key={key} item={item} href={href} />
 
-          if (state === 'collapsed')
-            return (
-              <SidebarMenuCollapsedDropdown key={key} item={item} href={href} />
-            )
+          // if (state === 'collapsed')
+          //   return (
+          //     <SidebarMenuCollapsedDropdown key={key} item={item} href={href} />
+          //   )
 
           return <SidebarMenuCollapsible key={key} item={item} href={href} />
         })}
@@ -122,51 +114,6 @@ const SidebarMenuCollapsible = ({
   )
 }
 
-const SidebarMenuCollapsedDropdown = ({
-  item,
-  href,
-}: {
-  item: NavCollapsible
-  href: string
-}) => {
-  return (
-    <SidebarMenuItem>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <SidebarMenuButton
-            tooltip={item.title}
-            isActive={checkIsActive(href, item)}
-          >
-            {item.icon && <item.icon />}
-            <span>{item.title}</span>
-            {item.badge && <NavBadge>{item.badge}</NavBadge>}
-            <ChevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
-          </SidebarMenuButton>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent side='right' align='start' sideOffset={4}>
-          <DropdownMenuLabel>
-            {item.title} {item.badge ? `(${item.badge})` : ''}
-          </DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          {item.items.map((sub) => (
-            <DropdownMenuItem key={`${sub.title}-${sub.url}`} asChild>
-              <Link
-                to={sub.url}
-                className={`${checkIsActive(href, sub) ? 'bg-secondary' : ''}`}
-              >
-                {sub.icon && <sub.icon />}
-                <span className='max-w-52 text-wrap'>{sub.title}</span>
-                {sub.badge && (
-                  <span className='ml-auto text-xs'>{sub.badge}</span>
-                )}
-              </Link>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </SidebarMenuItem>
-  )
-}
 
 function checkIsActive(href: string, item: NavItem, mainNav = false) {
   return (
